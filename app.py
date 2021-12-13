@@ -36,7 +36,7 @@ def page_post_create():
         file.save(path.joinpath(UPLOAD_FOLDER, file.filename))
         content = request.form.get("content")
 
-        pic_path = os.path.join(UPLOAD_FOLDER, file.filename)
+        pic_path = "uploads/" + file.filename
         add_post(POST_PATH, {"pic": pic_path, "content": content})
 
         return render_template("post_uploaded.html", path=pic_path, content=content)
