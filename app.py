@@ -44,7 +44,7 @@ def page_post_create():
 
 @app.route("/uploads/<path:path>")
 def static_dir(path):
-    return send_from_directory("uploads", path)
+    return send_from_directory(UPLOAD_FOLDER, path)
 
 
 if __name__ == "__main__":
